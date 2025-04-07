@@ -1,0 +1,42 @@
+# Project Video Game E-shop / platform
+
+## Features
+- [ ] 1 List of games
+- [ ] 2 Individual game page
+  - [ ] 1 additional content (DLC?)
+  - [ ] 2 reviews
+- [ ] 3 Adding new games
+- [ ] 4 Accounts
+  - [ ] 1 buying Games
+  - [ ] 2 uploading Games
+  - [ ] 3 basic account features (profile pictures, bio, etc.)
+  - [ ] 4 list of uploaded games
+  - [ ] 5 account comments
+  - [ ] 6? playing
+  - [ ] 7? gameplay stats
+- [ ] 5 Searching / filtering games
+  - [ ] 1 genres
+  - [ ] 2 year of publishing
+  - [ ] 3 name
+  - [ ] 4 developer / publisher
+  - [ ] 5 description
+- [ ] 6 Sales
+- [ ] 7 Preorders
+  - [ ] ? Early access?
+- [ ] 8 Home Page
+  - [ ] 1 new releases
+  - [ ] 2 popular bestsellers
+  - [ ] 3 for you
+  - [ ] 4? most played
+- [ ] 9 Owned game library
+  - [ ] 1? playtime
+  - [ ] 2 achievements
+  - [ ] 3? status (installed/downloading/neither)
+  - [ ] 4 game news
+- [ ] 10 Searching library
+  - [ ] 1 genres
+  - [ ] 2 year of publishing
+  - [ ] 3 name
+  - [ ] 4 developer / publisher
+  - [ ] 5 description
+  - [ ] 6? status (installed/downloading/neither)
