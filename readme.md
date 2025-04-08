@@ -40,3 +40,51 @@
   - [ ] 4 developer / publisher
   - [ ] 5 description
   - [ ] 6? status (installed/downloading/neither)
+
+
+## Database
+- [ ] User (Django?)
+- [ ] Profile
+  - [ ] Name ()
+  - [ ] Picture ()
+  - [ ] Description ()
+  - [ ] Owned_games ()
+  - [ ] Published_games ()
+  - [ ] Developed_games ()
+- [ ] Game
+  - [ ] Name ()
+  - [ ] Box_art ()
+  - [ ] Storefront_picture ()
+  - [ ] Price ()
+  - [ ] Developer ()
+  - [ ] Publiser ()
+  - [ ] Date_of_release ()
+  - [ ] Description ()
+  - [ ] System_requirements ()
+  - [ ] Review ()
+  - [ ] Updated ()
+  - [ ] Patch_notes ()
+- [ ] Patch Notes
+  - [ ] Game ()
+  - [ ] Update_time ()
+  - [ ] Notes_text ()
+- [ ] Image
+  - [ ] Image_file ()
+  - [ ] Profile_picture ()
+  - [ ] Box ()
+  - [ ] Storefront ()
+  - [ ] Description ()
+- [ ] Review
+  - [ ] Reviewer ()
+  - [ ] Game ()
+  - [ ] Rating ()
+  - [ ] Review_text ()
+  - [ ] Created ()
+  - [ ] Updated ()
+- [ ] Comment
+  - [ ] From_user_comment ()
+  - [ ] To_user_comment ()
+  - [ ] Comment_text ()
+  - [ ] Post_time ()
+  - [ ] Edited ()
+  - [ ] Last_edit ()
