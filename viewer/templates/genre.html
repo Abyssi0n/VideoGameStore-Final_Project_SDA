@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% comment %}TODO: Add back button! {% endcomment %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ genre }}</h1>
+    <ul>
+        {% for game in genre.games.all %}
+            <li><a href="{% url 'game' game.id %}">{{ game }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

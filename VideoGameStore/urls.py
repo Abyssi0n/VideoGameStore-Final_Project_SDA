@@ -24,4 +24,5 @@ urlpatterns = [
   path('genres/', GenresListView.as_view(), name="genres"),
   path('games/', GamesListView.as_view(), name="games"),
   path('game/<int:pk>/', GameDetailView.as_view(), name="game"),
+  path('genre/<int:pk>/', GenreDetailView.as_view(), name="genre"),
 ]

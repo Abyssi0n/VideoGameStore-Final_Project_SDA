@@ -15,7 +15,7 @@
     </span>
 
     {% for genre in game.genres.all %}
-        {{ genre }}
+    <a href="{% url 'genre' genre.id %}">{{ genre }}</a>
     {% endfor %}
     {% comment %}TODO: If developer / publisher group exists in db, link to it instead{% endcomment %}
     <div class="row">
