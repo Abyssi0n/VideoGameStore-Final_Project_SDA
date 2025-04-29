@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField
+from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField, DateField
 
 
 # Create your models here.
@@ -20,7 +20,7 @@ class Game(Model):
     price = FloatField(null=False, blank=False)
     # developers = ManyToManyField(DeveloperGroup, null=True, blank=True, related_name='games')
     # publishers = ManyToManyField(PublisherGroup, null=True, blank=True, related_name='games')
-    release_date = DateTimeField(auto_now_add=True)
+    release_date = DateField()
     description = TextField(null=True, blank=True)
     system_reqs = TextField(null=False, blank=False)
     updated = DateTimeField(auto_now=True)

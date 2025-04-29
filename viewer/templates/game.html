@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% comment %}TODO: Add back button! {% endcomment %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ game.name }}</h1>
+    <hr style="border: 1px solid black">
+    <span class="boxart">
+        <img src=" {{image.boxart.url}} "
+             alt=" {{image.description}} "
+             >
+    </span>
+
+    {% for genre in game.genres.all %}
+        {{ genre }}
+    {% endfor %}
+    {% comment %}TODO: If developer / publisher group exists in db, link to it instead{% endcomment %}
+    <div class="row">
+        <div class="col-md">
+            <p>Developer: {{game.developer.all}}</p>
+            <p>Publisher: {{game.publisher.all}}</p>
+        </div>
+        <div class="col-md">
+            <p>Release Date: {{game.release_date.day}}. {{game.release_date.month}}, {{game.release_date.year}}</p>
+        </div>
+    </div>
+    <p style="color: green; font-size: 25px"><strong>{{game.price}}€</strong></p>
+
+    <hr>
+    <h3>Game Description</h3>
+    {{game.description}}
+    <hr>
+    <h3>System Requirements</h3>
+    {{game.system_reqs}}
+{% endblock %}
