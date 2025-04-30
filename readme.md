@@ -46,10 +46,10 @@
 - [x] User (Django?)
 - [x] Genre
 - [ ] Profile
-  - [ ] User (1:1 -> User)
-  - [ ] Name (String)
+  - [x] User (1:1 -> User)
+  - [x] Name (String)
   - [ ] Picture (File)
-  - [ ] Description (String)
+  - [x] Description (String)
   - [ ] Owned_games (n:n -> Game)
   - [ ] Publisher (n:1 -> PublisherGroup)
   - [ ] Developer (n:1 -> DeveloperGroup)
