@@ -5,6 +5,10 @@ from django.views.generic import ListView, DetailView
 from viewer.models import Genre, Game
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
 class GenresListView(ListView):
     template_name = 'genres.html'
     model = Genre
@@ -27,4 +31,5 @@ class GameDetailView(DetailView):
     template_name = 'game.html'
     model = Game
     context_object_name = 'game'
+
 
