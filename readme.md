@@ -57,7 +57,6 @@
   - [x] Name (String)
   - [x] Genre (String)
   - [ ] Box_art (1:1 -> Image)
-  - [ ] Storefront_pictures (1:n -> Image)
   - [x] Price (Float)
   - [ ] Developer (n:n -> DeveloperGroup)
   - [ ] Publisher (n:n -> PublisherGroup)
@@ -67,6 +66,7 @@
   - [ ] Review (1:n -> Review)
   - [x] Updated (Date)
   - [ ] Patch_notes (1:n -> PatchNotes)
+  - [ ] Age_rating (n:n -> ESRB rating)
 - [ ] PatchNotes
   - [ ] Game (n:1 -> Game)
   - [ ] Update_time (Date)
@@ -74,8 +74,8 @@
 - [ ] Image
   - [ ] Image_file (File)
   - [ ] Profile_picture (1:1 -> Profile)
-  - [ ] Box (1:1 -> Game)
-  - [ ] Storefront (1:1 -> Game)
+  - [ ] Box (1:1 -> Game Box_art)
+  - [ ] ESRB (n:n -> Game Age_rating)
   - [ ] Description (String)
 - [ ] Review
   - [ ] Reviewer (1:n -> User)
