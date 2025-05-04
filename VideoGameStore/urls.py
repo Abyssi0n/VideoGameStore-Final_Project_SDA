@@ -16,9 +16,9 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from accounts.views import ProfileDetailView
+from accounts.views import ProfileDetailView, SubmittableLoginView, user_logout, SignUpView, profile_redirect
 from viewer.views import *
 
 urlpatterns = [
@@ -30,7 +30,13 @@ urlpatterns = [
   path('games/', GamesListView.as_view(), name="games"),
   path('game/<int:pk>/', GameDetailView.as_view(), name="game"),
 
-
+  path('profile/', profile_redirect, ),
   path('profile/<int:pk>/', ProfileDetailView.as_view(), name='profile'),
+
+  path('accounts/', include('django.contrib.auth.urls')),
+  path('accounts/login/', SubmittableLoginView.as_view(), name='login'),
+  path('accounts/logout/', user_logout, name='logout'),
+  path('accounts/signup/', SignUpView.as_view(), name='signup'),
+
 
 ]
