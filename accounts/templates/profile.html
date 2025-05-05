@@ -6,4 +6,24 @@
 
 {% block content %}
 <h1>{{ profile.nickname }}</h1>
+<div style="color:darkgray"><p><i>{{ profile }}</i></p></div>
+
+<hr>
+<h3>Bio</h3>
+{% if request.user.is_authenticated and user == profile.user %}
+    <a href="{% url 'profilebio_update' user.id %}" class="btn-primary">Change Bio</a>
+{% endif %}
+<p>{{ profile.biography }}</p>
+<h3>Owned Games:</h3>
+<ul>
+    {% for game in profile.owned_games.all %}
+        <li><a href="{% url 'game' game.id %}">{{ game }}</a></li>
+    {% empty %}
+        {% if request.user.is_authenticated and user == profile.user %}
+            You have no games yet.
+        {% else %}
+            User has no games.
+        {% endif %}
+    {% endfor %}
+</ul>
 {% endblock %}

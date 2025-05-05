@@ -18,7 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from accounts.views import ProfileDetailView, SubmittableLoginView, user_logout, SignUpView, profile_redirect
+from accounts.views import ProfileDetailView, SubmittableLoginView, user_logout, SignUpView, profile_redirect, \
+  ProfileBiographyUpdateView
 from viewer.views import *
 
 urlpatterns = [
@@ -30,7 +31,8 @@ urlpatterns = [
   path('games/', GamesListView.as_view(), name="games"),
   path('game/<int:pk>/', GameDetailView.as_view(), name="game"),
 
-  path('profile/', profile_redirect, ),
+  path('profile/', profile_redirect),
+  path('profile/<int:pk>/update_bio', ProfileBiographyUpdateView.as_view(), name='profilebio_update'),
   path('profile/<int:pk>/', ProfileDetailView.as_view(), name='profile'),
 
   path('accounts/', include('django.contrib.auth.urls')),
