@@ -46,13 +46,12 @@
 - [x] User (Django?)
 - [x] Genre
 - [ ] Profile
-  - [ ] User (1:1 -> User)
-  - [ ] Name (String)
+  - [x] User (1:1 -> User)
+  - [x] Name (String)
+  - [x] Birth_date (Date)
   - [ ] Picture (File)
-  - [ ] Description (String)
+  - [x] Description (String)
   - [ ] Owned_games (n:n -> Game)
-  - [ ] Publisher (n:1 -> PublisherGroup)
-  - [ ] Developer (n:1 -> DeveloperGroup)
 - [ ] Game
   - [x] Name (String)
   - [x] Genre (String)
@@ -92,13 +91,11 @@
   - [ ] Edited (Boolean)
   - [ ] Last_edit_time (Date)
 - [ ] DeveloperGroup
-  - [ ] Developers (1:n -> Profile)
   - [ ] Games (n:n -> Game)
   - [ ] Name (String)
   - [ ] Picture (File)
   - [ ] About (String)
 - [ ] PublisherGroup
-  - [ ] Publishers (1:n -> Profile)
   - [ ] Games (n:n -> Game)
   - [ ] Name (String)
   - [ ] Picture (File)
