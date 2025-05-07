@@ -27,6 +27,9 @@
             </div>
             {% else %}
             <div class="navbar-nav">
+            <a href="{% url 'signup' %}">
+                <button type="button" class="btn btn-light" >Register</button>
+            </a>
             <a href="{% url 'login' %}">
                 <button type="button" class="btn btn-light" >Login</button>
             </a>
