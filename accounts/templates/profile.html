@@ -6,12 +6,12 @@
 
 {% block content %}
 <h1>{{ profile.nickname }}</h1>
-<div style="color:darkgray"><p><i>{{ profile }}</i></p></div>
+<div style="color:#a9a9a9"><p><i>{{ profile }}</i></p></div>
 
 <hr>
-<h3>Bio</h3>
+<h3 style="display:inline-block">Bio</h3>
 {% if request.user.is_authenticated and user == profile.user %}
-    <a href="{% url 'profilebio_update' user.id %}" class="btn-primary">Change Bio</a>
+    <a href="{% url 'profilebio_update' user.id %}" class="btn-primary" style="background-color:black">Change Bio</a>
 {% endif %}
 <p>{{ profile.biography }}</p>
 <h3>Owned Games:</h3>

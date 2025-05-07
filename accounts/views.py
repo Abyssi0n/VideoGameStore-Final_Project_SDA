@@ -37,7 +37,7 @@ class SubmittableLoginView(LoginView):
 
 def user_logout(request):
     logout(request)
-    return redirect(request.META.get('HTTP_REFERER', '/'))
+    return redirect('home')
 
 
 def profile_redirect(request):

@@ -1,15 +1,15 @@
 # Project Video Game E-shop / platform
 
 ## Features
-- [ ] 1 List of games
-- [ ] 2 Individual game page
+- [x] 1 List of games
+- [x] 2 Individual game page
   - [ ] 1 additional content (DLC?)
   - [ ] 2 reviews
 - [ ] 3 Adding new games
-- [ ] 4 Accounts
+- [x] 4 Accounts
   - [ ] 1 buying Games
-  - [ ] 2 uploading Games
-  - [ ] 3 basic account features (profile pictures, bio, etc.)
+  - [ ] 2 Admins - uploading Games
+  - [x] 3 basic account features (profile pictures, bio, etc.)
   - [ ] 4 list of uploaded games
   - [ ] 5 account comments
   - [ ] 6? playing
