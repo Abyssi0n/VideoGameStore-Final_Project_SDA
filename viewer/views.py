@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 
-from viewer.forms import GameModelForm
+from viewer.forms import GameModelForm, GenreModelForm
 from viewer.models import Genre, Game
 
 
@@ -43,7 +43,18 @@ class GameCreateView(PermissionRequiredMixin, CreateView):
     permission_required = 'viewer.add_game'
 
     def form_invalid(self, form):
-        print("Formulář 'CreatorModelForm' není validní.")
+        print("Invalid Game Model Form")
+        return super().form_invalid(form)
+
+
+class GenreCreateView(PermissionRequiredMixin, CreateView):
+    template_name = 'form.html'
+    form_class = GenreModelForm
+    success_url = reverse_lazy('genres')
+    permission_required = 'viewer.add_genre'
+
+    def form_invalid(self, form):
+        print("Invalid Genre Model Form")
         return super().form_invalid(form)
 
 

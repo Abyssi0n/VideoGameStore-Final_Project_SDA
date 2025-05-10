@@ -2,9 +2,9 @@ import profile
 
 from django.contrib.auth.forms import UserCreationForm
 from django.db.transaction import atomic
-from django.forms import CharField, Textarea, PasswordInput, DateField, NumberInput
+from django.forms import CharField, Textarea, PasswordInput, DateField, NumberInput, ModelForm
 
-from accounts.models import Profile
+from accounts.models import Profile, Comment
 
 
 class SignUpForm(UserCreationForm):
@@ -63,3 +63,13 @@ class SignUpForm(UserCreationForm):
         if commit:
             profile.save()
         return user
+
+
+class CommentModelForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['comment']
+
+        labels = {
+            'comment': 'Comment'
+        }

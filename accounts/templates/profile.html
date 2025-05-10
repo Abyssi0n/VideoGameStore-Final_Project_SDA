@@ -26,4 +26,29 @@
         {% endif %}
     {% endfor %}
 </ul>
+<!--    {% if request.user.is_authenticated %}-->
+<!--        <form action="" method="post">-->
+<!--            {% csrf_token %}-->
+<!--            <table>{{ comment_form.as_table }}</table>-->
+<!--            <button type="submit">Comment</button>-->
+<!--        </form>-->
+<!--    {% endif %}-->
+<!--<hr>-->
+<!--    {% for comment in user.comment.all %}-->
+<!--        <div class="bg-light rounded mt-2 p-2 position-relative">-->
+<!--            <span>{{ comment.commenter }}</span>-->
+<!--            <span class="font-italic">{{ comment.created|date:'d. m. Y H:i' }}</span>-->
+<!--            {% if review.created != review.updated %}-->
+<!--                <span class="font-italic">(edited {{ comment.updated|date:'d. m. Y H:i' }})</span>-->
+<!--            {% endif %}-->
+<!--            {% if request.user == comment.commenter.user %}-->
+<!--                <a href="{% url 'comment_delete' comment.id %}">Delete</a>-->
+<!--            {% endif %}-->
+<!--            <div>-->
+<!--                Comment: {{ comment.comment }}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    {% empty %}-->
+<!--        There are no comments here yet.-->
+<!--    {% endfor %}-->
 {% endblock %}

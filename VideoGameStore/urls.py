@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from accounts.views import ProfileDetailView, SubmittableLoginView, user_logout, SignUpView, profile_redirect, \
-  ProfileBiographyUpdateView
+  ProfileBiographyUpdateView, CommentDeleteView
 from viewer.views import *
 
 urlpatterns = [
@@ -29,6 +29,7 @@ urlpatterns = [
 
   path('genres/', GenresListView.as_view(), name="genres"),
   path('genre/<int:pk>/', GenreDetailView.as_view(), name="genre"),
+  path('genre/create/', GenreCreateView.as_view(), name='genre_create'),
 
   path('games/', GamesListView.as_view(), name="games"),
   path('game/create/', GameCreateView.as_view(), name='game_create'),
@@ -43,5 +44,6 @@ urlpatterns = [
   path('accounts/logout/', user_logout, name='logout'),
   path('accounts/signup/', SignUpView.as_view(), name='signup'),
 
+  path('comment/delete/<int:pk>/', CommentDeleteView.as_view(), name='comment_delete'),
 
 ]

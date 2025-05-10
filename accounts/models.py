@@ -2,7 +2,8 @@ from datetime import date
 
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models import Model, OneToOneField, CASCADE, TextField, ManyToManyField, DateField
+from django.db.models import Model, OneToOneField, CASCADE, TextField, ManyToManyField, DateField, ForeignKey, \
+    DateTimeField
 from django.urls import reverse
 
 from viewer.models import Game
@@ -37,3 +38,22 @@ class Profile(Model):
 
     def get_absolute_url(self):
         return reverse('profile', args=(self.pk,))
+
+
+class Comment(Model):
+    profile = ForeignKey(Profile, on_delete=CASCADE, null=False, blank=False, related_name='profile')
+    commenter = ForeignKey(Profile, on_delete=CASCADE, null=False, blank=False, related_name='commenter')
+    comment = TextField(null=False, blank=False)
+    created = DateTimeField(auto_now_add=True)
+    edited = DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created']
+
+    def __repr__(self):
+        return (f"Comment(profile={self.profile}, "
+                f"from={self.commenter}, "
+                f"text={self.comment[:20]})")
+
+    def __str__(self):
+        return f"{self.commenter}: {self.profile} ({self.comment})"

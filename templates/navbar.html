@@ -17,6 +17,9 @@
         {% if perms.viewer.add_game %}
             <a class="nav-item nav-link active" href="{% url 'game_create' %}">Add Game</a>
         {% endif %}
+        {% if perms.viewer.add_genre %}
+            <a class="nav-item nav-link active" href="{% url 'genre_create' %}">Add Genre</a>
+        {% endif %}
 
 
     </ul>

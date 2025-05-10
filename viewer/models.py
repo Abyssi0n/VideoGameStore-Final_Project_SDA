@@ -1,5 +1,6 @@
 from django.db import models
-from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField, DateField
+from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField, DateField, \
+    CASCADE, ForeignKey
 
 
 # Create your models here.
@@ -15,6 +16,8 @@ class Genre(Model):
 
     def __str__(self):
         return self.name
+
+
 class Game(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
     genres = ManyToManyField(Genre, blank=True, related_name='games')
@@ -31,5 +34,3 @@ class Game(Model):
 
     def __str__(self):
         return self.name
-
-
