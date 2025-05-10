@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Genre - {{ genre }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ genre }}</h1>
+    {{genre.description}}
+{% endblock %}

@@ -5,6 +5,7 @@ from django.db.models import Model, CharField, ManyToManyField, FloatField, Date
 # Create your models here.
 class Genre(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
+    description = TextField(null=True, blank=True)
 
     class Meta:
         ordering = ['name']

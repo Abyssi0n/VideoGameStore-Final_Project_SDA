@@ -11,8 +11,14 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="{% url 'games' %}">List of all games</a>
-          <a class="dropdown-item" href="#">Games by genres</a>
         </div>
+      </li>
+        <a class="nav-item nav-link active" href="{% url 'genres' %}">Genres</a>
+        {% if perms.viewer.add_game %}
+            <a class="nav-item nav-link active" href="{% url 'game_create' %}">Add Game</a>
+        {% endif %}
+
+
     </ul>
         <div class="navbar-nav ml-auto">
         {% if user.is_authenticated %}

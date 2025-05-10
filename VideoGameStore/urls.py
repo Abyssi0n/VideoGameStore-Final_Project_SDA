@@ -28,7 +28,10 @@ urlpatterns = [
 
 
   path('genres/', GenresListView.as_view(), name="genres"),
+  path('genre/<int:pk>/', GenreDetailView.as_view(), name="genre"),
+
   path('games/', GamesListView.as_view(), name="games"),
+  path('game/create/', GameCreateView.as_view(), name='game_create'),
   path('game/<int:pk>/', GameDetailView.as_view(), name="game"),
 
   path('profile/', profile_redirect),
