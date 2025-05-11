@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView
 
 from viewer.forms import GameModelForm
@@ -47,3 +49,8 @@ class GameCreateView(PermissionRequiredMixin, CreateView):
         return super().form_invalid(form)
 
 
+@login_required
+def buy(request, pk):
+    buying_game = Game.objects.get(id=pk)
+    context = {'game': buying_game}
+    return render(request, 'buy.html', context)

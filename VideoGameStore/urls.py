@@ -43,5 +43,6 @@ urlpatterns = [
   path('accounts/logout/', user_logout, name='logout'),
   path('accounts/signup/', SignUpView.as_view(), name='signup'),
 
+  path('buy/<int:pk>', buy, name="buy_game")
 
 ]

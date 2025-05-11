@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>
+        Purchase
+      </title>
+</head>
+  <body style="background-color: black;text-align:center;color: white;font-size: 60px">
+        This is an example of a buy window redirect.
+        You are buying {{ game.name }}
+        <hr>
+        <a href="{% url 'game' game.id %}" class="btn-primary" style="background-color:darkgreen;color: white">Confirm</a>
+        <a href="{% url 'game' game.id %}" class="btn-primary" style="background-color:darkred;color: white;">Cancel</a>
+  </body>
+</html>
