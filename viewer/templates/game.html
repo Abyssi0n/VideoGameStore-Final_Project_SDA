@@ -30,8 +30,13 @@
         </div>
     </div>
     <p style="color: green; font-size: 25px;display:inline-block"><strong>{{game.price}}€</strong></p>
-    <a href="{% url 'buy_game' game.id %}" class="btn-primary" style="background-color:green;padding: 5px"><B>PURCHASE</B></a>
-
+    {% if request.user.is_authenticated %}
+            {% if game in profile.owned_games.all %}
+                <p>You already own this game</p>
+            {% else %}
+                <a href="{% url 'buy_game' game.id %}" class="btn-primary" style="background-color:green;padding: 5px"><B>PURCHASE</B></a>
+            {% endif %}
+    {% endif %}
     <hr>
     <h3>Game Description</h3>
     {{game.description}}

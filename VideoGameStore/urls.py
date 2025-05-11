@@ -32,7 +32,8 @@ urlpatterns = [
 
   path('games/', GamesListView.as_view(), name="games"),
   path('game/create/', GameCreateView.as_view(), name='game_create'),
-  path('game/<int:pk>/', GameDetailView.as_view(), name="game"),
+  # path('game/<int:pk>/', GameDetailView.as_view(), name="game"),
+  path('game/<int:pk>/', game, name="game"),
 
   path('profile/', profile_redirect),
   path('profile/<int:pk>/update_bio', ProfileBiographyUpdateView.as_view(), name='profilebio_update'),
@@ -43,6 +44,7 @@ urlpatterns = [
   path('accounts/logout/', user_logout, name='logout'),
   path('accounts/signup/', SignUpView.as_view(), name='signup'),
 
-  path('buy/<int:pk>', buy, name="buy_game")
+  path('buy/<int:pk>', buy, name="buy_game"),
+  path('buy_confirm/<int:pk>', buy_confirm, name="buy_confirm"),
 
 ]
