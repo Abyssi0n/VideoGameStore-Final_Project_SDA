@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from accounts.models import Profile
 from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm
@@ -37,6 +37,7 @@ class GameDetailView(DetailView):
     template_name = 'game.html'
     model = Game
     context_object_name = 'game'
+
 
 def game(request, pk):
     game_ = Game.objects.get(id=pk)
@@ -73,6 +74,29 @@ class GenreCreateView(PermissionRequiredMixin, CreateView):
         return super().form_invalid(form)
 
 
+class GenreUpdateView(UpdateView):
+    template_name = 'form.html'
+    form_class = GenreModelForm
+    model = Genre
+    success_url = "/genre/{id}"
+    permission_required = 'viewer.edit_genre'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+class GameUpdateView(UpdateView):
+    template_name = 'form.html'
+    form_class = GameModelForm
+    model = Game
+    success_url = "/game/{id}"
+    permission_required = 'viewer.edit_game'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+
 @login_required
 def buy(request, pk):
     buying_game = Game.objects.get(id=pk)
@@ -100,6 +124,13 @@ class DeveloperDetailView(DetailView):
     model = Developer
     context_object_name = 'developer'
 
+# def dev(request, pk):
+#     dev_ = Developer.objects.get(id=pk)
+#     games_ = Game.objects.get(developers=pk)
+#     context = {'developer': dev_,
+#                'games': games_}
+#     return render(request, "developer.html", context)
+
 class PublisherCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = PublisherModelForm
@@ -115,6 +146,30 @@ class DeveloperCreateView(PermissionRequiredMixin, CreateView):
     form_class = DeveloperModelForm
     success_url = "developer/{id}/"
     permission_required = 'viewer.add_dev'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+
+class PublisherUpdateView(UpdateView):
+    template_name = 'form.html'
+    form_class = PublisherModelForm
+    model = Publisher
+    success_url = "/publisher/{id}"
+    permission_required = 'viewer.edit_pub'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+
+class DeveloperUpdateView(UpdateView):
+    template_name = 'form.html'
+    form_class = DeveloperModelForm
+    model = Developer
+    success_url = "/developer/{id}"
+    permission_required = 'viewer.edit_dev'
 
     def form_invalid(self, form):
         print("Form is invalid")

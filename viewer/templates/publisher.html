@@ -5,12 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ publisher }}</h1>
-    {% if publisher.website count %}
-        {{ publisher.website }}
+    <h1 style="display:inline-block">{{ publisher }}</h1>
+    {% if perms.viewer.edit_pub %}
+        <a href="{% url 'pub_edit' publisher.id %}" class="btn-primary" style="background-color:black">EDIT</a>
     {% endif %}
+    <p>{% if publisher.website %}
+        <a href="{{publisher.website}}">{{ publisher.website }}</a>
+    {% endif %}</p>
+    <hr style="border: 1px solid black">
+    <h2>About</h2>
     {{publisher.about}}
-    {% for game in publisher.games %}
-        {{ game }}
+    <hr style="border: 1px solid black">
+    {% for game in publisher.games.all %}
+        <li><a href="{% url 'game' game.id %}">{{ game }}</a></li>
     {% endfor %}
 {% endblock %}

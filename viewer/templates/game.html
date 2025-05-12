@@ -8,7 +8,10 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ game.name }}</h1>
+    <h1 style="display:inline-block">{{ game.name }}</h1>
+    {% if perms.viewer.edit_game %}
+        <a href="{% url 'game_edit' game.id %}" class="btn-primary" style="background-color:black">EDIT</a>
+    {% endif %}
     <hr style="border: 1px solid black">
     <span class="boxart">
         <img src=" {{image.boxart.url}} "
@@ -31,7 +34,7 @@
 
 
             <p>Publisher:
-                {% for pub in game.publisher.all %}
+                {% for pub in game.publishers.all %}
                     <a href="{% url 'publisher' pub.id %}">{{ pub }}</a>
                 {% endfor %}
             </p>

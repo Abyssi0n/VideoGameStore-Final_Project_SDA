@@ -30,11 +30,12 @@ urlpatterns = [
   path('genres/', GenresListView.as_view(), name="genres"),
   path('genre/create/', GenreCreateView.as_view(), name="genre_create"),
   path('genre/<int:pk>/', GenreDetailView.as_view(), name="genre"),
+  path('genre/<int:pk>/update/', GenreUpdateView.as_view(), name="genre_edit"),
 
   path('games/', GamesListView.as_view(), name="games"),
   path('game/create/', GameCreateView.as_view(), name='game_create'),
-  # path('game/<int:pk>/', GameDetailView.as_view(), name="game"),
   path('game/<int:pk>/', game, name="game"),
+  path('game/<int:pk>/update', GameUpdateView.as_view(), name="game_edit"),
 
   path('profile/', profile_redirect),
   path('profile/<int:pk>/update_bio', ProfileBiographyUpdateView.as_view(), name='profilebio_update'),
@@ -49,7 +50,9 @@ urlpatterns = [
   path('buy_confirm/<int:pk>', buy_confirm, name="buy_confirm"),
 
   path('publisher/<int:pk>/', PublisherDetailView.as_view(), name="publisher"),
+  path('publisher/<int:pk>/update', PublisherUpdateView.as_view(), name="pub_edit"),
   path('developer/<int:pk>/', DeveloperDetailView.as_view(), name="developer"),
+  path('developer/<int:pk>/update', DeveloperUpdateView.as_view(), name="dev_edit"),
   path('publisher/create/', PublisherCreateView.as_view(), name="pub_create"),
   path('developer/create/', DeveloperCreateView.as_view(), name="dev_create"),
 ]

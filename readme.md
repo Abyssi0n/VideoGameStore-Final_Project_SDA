@@ -23,11 +23,11 @@
 - [ ] 6 Sales
 - [ ] 7 Preorders
   - [ ] ? Early access?
-- [ ] 8 Home Page
-  - [ ] 1 new releases
-  - [ ] 2 popular bestsellers
-  - [ ] 3 for you
-  - [ ] 4? most played
+  - [ ] 8 Home Page
+    - [ ] 1 new releases
+    - [ ] 2 popular bestsellers
+    - [ ] 3 for you
+    - [ ] 4? most played
 - [ ] 9 Owned game library
   - [ ] 1? playtime
   - [ ] 2 achievements
@@ -45,20 +45,20 @@
 ## Database
 - [x] User (Django?)
 - [x] Genre
-- [ ] Profile
+- [x] Profile
   - [x] User (1:1 -> User)
   - [x] Name (String)
   - [x] Birth_date (Date)
   - [ ] Picture (File)
   - [x] Description (String)
-  - [ ] Owned_games (n:n -> Game)
-- [ ] Game
+  - [x] Owned_games (n:n -> Game)
+- [x] Game
   - [x] Name (String)
   - [x] Genre (String)
   - [ ] Box_art (1:1 -> Image)
   - [x] Price (Float)
-  - [ ] Developer (n:n -> DeveloperGroup)
-  - [ ] Publisher (n:n -> PublisherGroup)
+  - [x] Developer (n:n -> DeveloperGroup)
+  - [x] Publisher (n:n -> PublisherGroup)
   - [x] Date_of_release (Date)
   - [x] Description (String)
   - [x] System_requirements (String)
@@ -90,15 +90,15 @@
   - [ ] Post_time (Date)
   - [ ] Edited (Boolean)
   - [ ] Last_edit_time (Date)
-- [ ] DeveloperGroup
-  - [ ] Games (n:n -> Game)
-  - [ ] Name (String)
-  - [ ] Official Website (URL)
+- [x] DeveloperGroup
+  - [x] Games (n:n -> Game)
+  - [x] Name (String)
+  - [x] Official Website (URL)
   - [ ] Picture (File)
-  - [ ] About (String)
-- [ ] PublisherGroup
-  - [ ] Games (n:n -> Game)
-  - [ ] Name (String)
-  - [ ] Official Website (URL)
+  - [x] About (String)
+- [x] PublisherGroup
+  - [x] Games (n:n -> Game)
+  - [x] Name (String)
+  - [x] Official Website (URL)
   - [ ] Picture (File)
-  - [ ] About (String)
+  - [x] About (String)

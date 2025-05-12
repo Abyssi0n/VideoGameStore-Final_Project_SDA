@@ -5,12 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ developer }}</h1>
-    {% if developer.count %}
-        {{ developer.website }}
+    <h1 style="display:inline-block">{{ developer }}</h1>
+    {% if perms.viewer.edit_dev %}
+        <a href="{% url 'dev_edit' developer.id %}" class="btn-primary" style="background-color:black">EDIT</a>
     {% endif %}
+    <p>{% if developer.website %}
+        <a href="{{developer.website}}">{{ developer.website }}</a>
+    {% endif %}</p>
+    <hr style="border: 1px solid black">
+    <h2>About</h2>
     {{developer.about}}
-    {% for game in developer.games %}
-        {{ game }}
+    <hr style="border: 1px solid black">
+    {% for game in developer.games.all %}
+        <li><a href="{% url 'game' game.id %}">{{ game }}</a></li>
     {% endfor %}
 {% endblock %}
