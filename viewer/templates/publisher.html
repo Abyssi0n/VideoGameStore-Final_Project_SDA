@@ -6,11 +6,11 @@
 
 {% block content %}
     <h1>{{ publisher }}</h1>
-    {if publisher.website exists
+    {% if publisher.website count %}
         {{ publisher.website }}
     {% endif %}
     {{publisher.about}}
-    { for game in publisher.games }
+    {% for game in publisher.games %}
         {{ game }}
     {% endfor %}
 {% endblock %}

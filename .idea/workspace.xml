@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Buy page">
-      <change afterPath="$PROJECT_DIR$/viewer/templates/developer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/viewer/templates/publisher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_04_2025_16_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_04_2025_16_59__Changes_.xml" afterDir="false" />
+    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Create Developer and Publisher model and template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VideoGameStore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoGameStore/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/developer.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/developer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/publisher.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/publisher.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,14 +58,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "viewer/feature/11-devpub",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;viewer/feature/11-devpub&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Programs\PythonProjects\FinalProjectSDA" />
@@ -129,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746931872740</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Create Developer and Publisher model and template">
+      <option name="closed" value="true" />
+      <created>1747044457063</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747044457063</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +167,7 @@
     <MESSAGE value="Small Profile template update&#10;Navbar design" />
     <MESSAGE value="Admin ability to add genres" />
     <MESSAGE value="Buy page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Buy page" />
+    <MESSAGE value="Create Developer and Publisher model and template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Developer and Publisher model and template" />
   </component>
 </project>

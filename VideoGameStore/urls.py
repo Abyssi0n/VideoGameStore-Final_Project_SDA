@@ -50,4 +50,6 @@ urlpatterns = [
 
   path('publisher/<int:pk>/', PublisherDetailView.as_view(), name="publisher"),
   path('developer/<int:pk>/', DeveloperDetailView.as_view(), name="developer"),
+  path('publisher/create/', PublisherCreateView.as_view(), name="pub_create"),
+  path('developer/create/', DeveloperCreateView.as_view(), name="dev_create"),
 ]

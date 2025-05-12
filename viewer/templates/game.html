@@ -19,11 +19,22 @@
     {% for genre in game.genres.all %}
         {{ genre }}
     {% endfor %}
-    {% comment %}TODO: If developer / publisher group exists in db, link to it instead{% endcomment %}
+
     <div class="row">
         <div class="col-md">
-            <p>Developer: {{game.developer.all}}</p>
-            <p>Publisher: {{game.publisher.all}}</p>
+
+            <p>Developer:
+                {% for dev in game.developers.all %}
+                    <a href="{% url 'developer' dev.id %}">{{ dev }}</a>
+                {% endfor %}
+            </p>
+
+
+            <p>Publisher:
+                {% for pub in game.publisher.all %}
+                    <a href="{% url 'publisher' pub.id %}">{{ pub }}</a>
+                {% endfor %}
+            </p>
         </div>
         <div class="col-md">
             <p>Release Date: {{game.release_date.day}}. {{game.release_date.month}}, {{game.release_date.year}}</p>

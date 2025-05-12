@@ -7,7 +7,7 @@ from django.views import View
 from django.views.generic import ListView, DetailView, CreateView
 
 from accounts.models import Profile
-from viewer.forms import GameModelForm, GenreModelForm
+from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm
 from viewer.models import Genre, Game, Publisher, Developer
 
 
@@ -43,7 +43,9 @@ def game(request, pk):
     profile_ = None
     if request.user.is_authenticated:
         profile_ = Profile.objects.get(user=request.user)
-    context = {'game': game_, 'profile': profile_}
+    context = {'game': game_,
+               'profile': profile_,
+               }
     return render(request, 'game.html', context)
 
 
@@ -51,7 +53,7 @@ def game(request, pk):
 class GameCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = GameModelForm
-    success_url = reverse_lazy('games')
+    success_url = "games/{id}"
     permission_required = 'viewer.add_game'
 
     def form_invalid(self, form):
@@ -62,7 +64,8 @@ class GameCreateView(PermissionRequiredMixin, CreateView):
 class GenreCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = GenreModelForm
-    success_url = reverse_lazy('genres')
+    success_url = "/genre/{id}"
+    # success_url = reverse_lazy('genres')
     permission_required = 'viewer.add_genre'
 
     def form_invalid(self, form):
@@ -96,3 +99,23 @@ class DeveloperDetailView(DetailView):
     template_name = 'developer.html'
     model = Developer
     context_object_name = 'developer'
+
+class PublisherCreateView(PermissionRequiredMixin, CreateView):
+    template_name = 'form.html'
+    form_class = PublisherModelForm
+    success_url = "publisher/{id}/"
+    permission_required = 'viewer.add_pub'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+class DeveloperCreateView(PermissionRequiredMixin, CreateView):
+    template_name = 'form.html'
+    form_class = DeveloperModelForm
+    success_url = "developer/{id}/"
+    permission_required = 'viewer.add_dev'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)

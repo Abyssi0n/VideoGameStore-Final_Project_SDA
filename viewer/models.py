@@ -16,29 +16,12 @@ class Genre(Model):
 
     def __str__(self):
         return self.name
-class Game(Model):
-    name = CharField(max_length=100, null=False, blank=False, unique=True)
-    genres = ManyToManyField(Genre, blank=True, related_name='games')
-    price = FloatField(null=False, blank=False)
-    # developers = ManyToManyField(DeveloperGroup, null=True, blank=True, related_name='games')
-    # publishers = ManyToManyField(PublisherGroup, null=True, blank=True, related_name='games')
-    release_date = DateField()
-    description = TextField(null=True, blank=True)
-    system_reqs = TextField(null=False, blank=False)
-    updated = DateTimeField(auto_now=True)
-
-    def __repr__(self):
-        return f"Game(name={self.name})"
-
-    def __str__(self):
-        return self.name
-
 
 class Developer(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
     website = URLField(null=False, blank=True)
     about = TextField(null=True, blank=True)
-    games = ManyToManyField(Game, blank=True, related_name='dev_game')
+    # games = ManyToManyField(Game, blank=True, related_name='dev_game')
 
 
 
@@ -53,7 +36,7 @@ class Publisher(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
     website = URLField(null=False, blank=True)
     about = TextField(null=True, blank=True)
-    games = ManyToManyField(Game, blank=True, related_name='pub_game')
+    # games = ManyToManyField(Game, blank=True, related_name='pub_game')
 
 
     def __repr__(self):
@@ -61,3 +44,22 @@ class Publisher(Model):
 
     def __str__(self):
         return self.name
+
+class Game(Model):
+    name = CharField(max_length=100, null=False, blank=False, unique=True)
+    genres = ManyToManyField(Genre, blank=True, related_name='games')
+    price = FloatField(null=False, blank=False)
+    developers = ManyToManyField(Developer, blank=True, related_name='dev_game')
+    publishers = ManyToManyField(Publisher, blank=True, related_name='pub_game')
+    release_date = DateField()
+    description = TextField(null=True, blank=True)
+    system_reqs = TextField(null=False, blank=False)
+    updated = DateTimeField(auto_now=True)
+
+    def __repr__(self):
+        return f"Game(name={self.name})"
+
+    def __str__(self):
+        return self.name
+
+

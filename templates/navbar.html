@@ -27,6 +27,12 @@
             {% if perms.viewer.add_genre %}
                 <a class="dropdown-item" href="{% url 'genre_create' %}">Add Genre</a>
             {% endif %}
+            {% if perms.viewer.add_pub %}
+                <a class="dropdown-item" href="{% url 'pub_create' %}">Add Publisher</a>
+            {% endif %}
+            {% if perms.viewer.add_dev %}
+                <a class="dropdown-item" href="{% url 'dev_create' %}">Add Developer</a>
+            {% endif %}
             </div>
         </li>
         <div class="navbar-nav">

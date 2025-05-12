@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from viewer.models import Game, Genre
+from viewer.models import Game, Genre, Publisher, Developer
 
 
 class GameModelForm(ModelForm):
@@ -12,4 +12,16 @@ class GenreModelForm(ModelForm):
 
     class Meta:
         model = Genre
+        fields = '__all__'
+
+class PublisherModelForm(ModelForm):
+
+    class Meta:
+        model = Publisher
+        fields = '__all__'
+
+class DeveloperModelForm(ModelForm):
+
+    class Meta:
+        model = Developer
         fields = '__all__'

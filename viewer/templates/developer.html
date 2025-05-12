@@ -6,11 +6,11 @@
 
 {% block content %}
     <h1>{{ developer }}</h1>
-    {if developer.website exists}
+    {% if developer.count %}
         {{ developer.website }}
     {% endif %}
     {{developer.about}}
-    { for game in developer.games }
+    {% for game in developer.games %}
         {{ game }}
     {% endfor %}
 {% endblock %}
