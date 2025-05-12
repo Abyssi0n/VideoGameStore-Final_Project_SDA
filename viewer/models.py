@@ -1,5 +1,6 @@
 from django.db import models
-from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField, DateField
+from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField, DateField, \
+    URLField
 
 
 # Create your models here.
@@ -33,3 +34,30 @@ class Game(Model):
         return self.name
 
 
+class Developer(Model):
+    name = CharField(max_length=100, null=False, blank=False, unique=True)
+    website = URLField(null=False, blank=True)
+    about = TextField(null=True, blank=True)
+    games = ManyToManyField(Game, blank=True, related_name='dev_game')
+
+
+
+    def __repr__(self):
+        return f"Developer(name={self.name})"
+
+    def __str__(self):
+        return self.name
+
+
+class Publisher(Model):
+    name = CharField(max_length=100, null=False, blank=False, unique=True)
+    website = URLField(null=False, blank=True)
+    about = TextField(null=True, blank=True)
+    games = ManyToManyField(Game, blank=True, related_name='pub_game')
+
+
+    def __repr__(self):
+        return f"Publisher(name={self.name})"
+
+    def __str__(self):
+        return self.name

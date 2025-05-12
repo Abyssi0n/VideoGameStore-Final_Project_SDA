@@ -23,11 +23,12 @@ from accounts.views import ProfileDetailView, SubmittableLoginView, user_logout,
 from viewer.views import *
 
 urlpatterns = [
-  path('admin/', admin.site.urls),
+  path('admin/', admin.site.urls, name='admin'),
   path('', home, name='home'),
 
 
   path('genres/', GenresListView.as_view(), name="genres"),
+  path('genre/create/', GenreCreateView.as_view(), name="genre_create"),
   path('genre/<int:pk>/', GenreDetailView.as_view(), name="genre"),
 
   path('games/', GamesListView.as_view(), name="games"),
@@ -47,4 +48,6 @@ urlpatterns = [
   path('buy/<int:pk>', buy, name="buy_game"),
   path('buy_confirm/<int:pk>', buy_confirm, name="buy_confirm"),
 
+  path('publisher/<int:pk>/', PublisherDetailView.as_view(), name="publisher"),
+  path('developer/<int:pk>/', DeveloperDetailView.as_view(), name="developer"),
 ]

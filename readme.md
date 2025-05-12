@@ -93,10 +93,12 @@
 - [ ] DeveloperGroup
   - [ ] Games (n:n -> Game)
   - [ ] Name (String)
+  - [ ] Official Website (URL)
   - [ ] Picture (File)
   - [ ] About (String)
 - [ ] PublisherGroup
   - [ ] Games (n:n -> Game)
   - [ ] Name (String)
+  - [ ] Official Website (URL)
   - [ ] Picture (File)
   - [ ] About (String)

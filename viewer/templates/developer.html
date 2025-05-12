@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ developer }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ developer }}</h1>
+    {if developer.website exists}
+        {{ developer.website }}
+    {% endif %}
+    {{developer.about}}
+    { for game in developer.games }
+        {{ game }}
+    {% endfor %}
+{% endblock %}

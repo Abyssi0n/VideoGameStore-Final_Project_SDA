@@ -7,8 +7,8 @@ from django.views import View
 from django.views.generic import ListView, DetailView, CreateView
 
 from accounts.models import Profile
-from viewer.forms import GameModelForm
-from viewer.models import Genre, Game
+from viewer.forms import GameModelForm, GenreModelForm
+from viewer.models import Genre, Game, Publisher, Developer
 
 
 def home(request):
@@ -59,6 +59,17 @@ class GameCreateView(PermissionRequiredMixin, CreateView):
         return super().form_invalid(form)
 
 
+class GenreCreateView(PermissionRequiredMixin, CreateView):
+    template_name = 'form.html'
+    form_class = GenreModelForm
+    success_url = reverse_lazy('genres')
+    permission_required = 'viewer.add_genre'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+
 @login_required
 def buy(request, pk):
     buying_game = Game.objects.get(id=pk)
@@ -73,3 +84,15 @@ def buy_confirm(request, pk):
     profile_.owned_games.add(game_)
 
     return redirect('game', pk)
+
+
+class PublisherDetailView(DetailView):
+    template_name = 'publisher.html'
+    model = Publisher
+    context_object_name = 'publisher'
+
+
+class DeveloperDetailView(DetailView):
+    template_name = 'developer.html'
+    model = Developer
+    context_object_name = 'developer'
