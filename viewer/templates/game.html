@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% comment %}TODO: Add back button! {% endcomment %}
-{% comment %}TODO: EDIT GAME {% endcomment %}
 
 {% block title %}
 {{game.name}} - store page
@@ -13,29 +12,40 @@
         <a href="{% url 'game_edit' game.id %}" class="btn-primary" style="background-color:black">EDIT</a>
     {% endif %}
     <hr style="border: 1px solid black">
-    <span class="boxart">
-        <img src=" {{image.boxart.url}} "
-             alt=" {{image.description}} "
-             >
-    </span>
+    {% if image in game.image.all %}
+        {% for image in game.image.all %}
+            <span class="boxart">
+                <img src=" {{image.image.url}} "
+                     alt=" {{image.description}} "
+                     style='height: auto; width: 100%; max-width:256;max-height:256'>
+            </span>
+        {% endfor %}
+        {% if perms.viewer.edit_img %}
+            <a href="{% url 'img_edit' image.id %}" class="btn-primary" style="background-color:black">EDIT</a>
+        {% endif %}
+    {% endif %}
+    <br>
 
-    {% for genre in game.genres.all %}
-        {{ genre }}
-    {% endfor %}
+
 
     <div class="row">
         <div class="col-md">
+            <p>Genres:
+                {% for genre in game.genres.all %}
+                   <a href="{% url 'genre' genre.id %}">{{ genre }}</a>{% if not forloop.last %},{% endif %}
+                {% endfor %}
+            </p>
 
             <p>Developer:
                 {% for dev in game.developers.all %}
-                    <a href="{% url 'developer' dev.id %}">{{ dev }}</a>
+                    <a href="{% url 'developer' dev.id %}">{{ dev }}</a>{% if not forloop.last %},{% endif %}
                 {% endfor %}
             </p>
 
 
             <p>Publisher:
                 {% for pub in game.publishers.all %}
-                    <a href="{% url 'publisher' pub.id %}">{{ pub }}</a>
+                    <a href="{% url 'publisher' pub.id %}">{{ pub }}</a>{% if not forloop.last %},{% endif %}
                 {% endfor %}
             </p>
         </div>

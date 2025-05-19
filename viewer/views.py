@@ -4,13 +4,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.db.models import Q
 
 from accounts.models import Profile
-from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm
-from viewer.models import Genre, Game, Publisher, Developer
-
+from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm, ImageModelForm
+from viewer.models import Genre, Game, Publisher, Developer, Image
 
 
 def home(request):
@@ -44,11 +43,17 @@ class GameDetailView(DetailView):
 def game(request, pk):
     game_ = Game.objects.get(id=pk)
     profile_ = None
+    try:
+        image_ = Image.objects.get(game=game_)
+    except:
+        image_ = None
     if request.user.is_authenticated:
         profile_ = Profile.objects.get(user=request.user)
     context = {'game': game_,
                'profile': profile_,
                }
+    if image_:
+        context.update({'image': image_})
     return render(request, 'game.html', context)
 
 
@@ -133,6 +138,7 @@ class DeveloperDetailView(DetailView):
 #                'games': games_}
 #     return render(request, "developer.html", context)
 
+
 class PublisherCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = PublisherModelForm
@@ -142,6 +148,7 @@ class PublisherCreateView(PermissionRequiredMixin, CreateView):
     def form_invalid(self, form):
         print("Form is invalid")
         return super().form_invalid(form)
+
 
 class DeveloperCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
@@ -197,3 +204,45 @@ def search(request):
                        'developer': developer,}
             return render(request, 'search.html', context)
     return render(request, 'home.html')
+
+
+class ImageListView(ListView):
+    template_name = 'images.html'
+    model = Image
+    context_object_name = 'images'
+
+
+
+class ImageDetailView(DetailView):
+    model = Image
+    template_name = 'image.html'
+
+
+class ImageCreateView(PermissionRequiredMixin, CreateView):
+    template_name = 'form_image.html'
+    form_class = ImageModelForm
+    success_url = reverse_lazy('home')
+    permission_required = 'viewer.add_img'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+
+class ImageUpdateView(PermissionRequiredMixin, UpdateView):
+    template_name = 'form_image.html'
+    form_class = ImageModelForm
+    success_url = reverse_lazy('images')
+    model = Image
+    permission_required = 'viewer.edit_img'
+
+    def form_invalid(self, form):
+        print("Form is invalid")
+        return super().form_invalid(form)
+
+
+class ImageDeleteView(PermissionRequiredMixin, DeleteView):
+    template_name = 'confirm_delete.html'
+    model = Image
+    success_url = reverse_lazy('images')
+    permission_required = 'viewer.del_img'

@@ -14,10 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from VideoGameStore import settings
 from accounts.views import ProfileDetailView, SubmittableLoginView, user_logout, SignUpView, profile_redirect, \
   ProfileBiographyUpdateView
 from viewer.views import *
@@ -56,5 +57,11 @@ urlpatterns = [
   path('developer/<int:pk>/update', DeveloperUpdateView.as_view(), name="dev_edit"),
   path('developer/create/', DeveloperCreateView.as_view(), name="dev_create"),
 
+  path('images/', ImageListView.as_view(), name='images'),
+  path('image/<int:pk>/', ImageDetailView.as_view(), name='image'),
+  path('image/create/', ImageCreateView.as_view(), name='img_add'),
+  path('image/update/<int:pk>/', ImageUpdateView.as_view(), name='img_edit'),
+  path('image/delete/<int:pk>/', ImageDeleteView.as_view(), name='img_del'),
+
   path('search/', search, name='search'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

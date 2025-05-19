@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Image for: {{ image.description }}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <img src="{{ image.image.url }}"
+             alt="{{ image.description }}"
+             height="80%">
+    </div>
+
+    <div class="image.details mt-4">
+        {% if image.game %}
+            <div class="image-game mb-2">
+                Game: <a href="{% url 'game' image.game.id %}">{{ image.game }}</a>
+            </div>
+        {% endif %}
+
+        {% if image.publisher %}
+            <div class="image-publisher mb-2">
+                Publisher: <a href="{% url 'publisher' image.publisher.id %}">{{ image.publisher }}</a>
+            </div>
+        {% endif %}
+
+        {% if image.developer %}
+            <div class="image-developer mb-2">
+                Developer: <a href="{% url 'developer' image.developer.id %}">{{ image.developer }}</a>
+            </div>
+        {% endif %}
+
+        <div class="image.description mb-2">
+            Description: {{ image.description }}
+        </div>
+    </div>
+
+    {% if perms.viewer.edit_img %}
+        <a href="{% url 'img_edit' image.id %}" class="btn btn-primary" style="background-color:grey;border:none">Change</a>
+    {% endif %}
+    {% if perms.viewer.del_img %}
+        <a href="{% url 'img_del' image.id %}" class="btn btn-danger" style="background-color:black;border:none">Delete</a>
+    {% endif %}
+{% endblock %}

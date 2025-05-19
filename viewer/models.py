@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField, DateField, \
-    URLField
+    URLField, SET_NULL, ForeignKey, ImageField
 
 
 # Create your models here.
@@ -21,7 +21,6 @@ class Developer(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
     website = URLField(null=False, blank=True)
     about = TextField(null=True, blank=True)
-    # games = ManyToManyField(Game, blank=True, related_name='dev_game')
 
 
 
@@ -36,7 +35,6 @@ class Publisher(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
     website = URLField(null=False, blank=True)
     about = TextField(null=True, blank=True)
-    # games = ManyToManyField(Game, blank=True, related_name='pub_game')
 
 
     def __repr__(self):
@@ -63,3 +61,15 @@ class Game(Model):
         return self.name
 
 
+class Image(Model):
+    image = ImageField(upload_to='images/', default=None, null=False, blank=False)
+    game = ForeignKey(Game, on_delete=SET_NULL, null=True, blank=True, related_name='image')
+    publisher = ForeignKey(Publisher, on_delete=SET_NULL, null=True, blank=True, related_name='image')
+    developer = ForeignKey(Developer, on_delete=SET_NULL, null=True, blank=True, related_name='image')
+    description = TextField(null=True, blank=True)
+
+    def __repr__(self):
+        return f"Description(description={self.description})"
+
+    def __str__(self):
+        return self.description[:25]
