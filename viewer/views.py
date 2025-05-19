@@ -5,10 +5,12 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.db.models import Q
 
 from accounts.models import Profile
 from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm
 from viewer.models import Genre, Game, Publisher, Developer
+
 
 
 def home(request):
@@ -174,3 +176,24 @@ class DeveloperUpdateView(UpdateView):
     def form_invalid(self, form):
         print("Form is invalid")
         return super().form_invalid(form)
+
+def search(request):
+    if request.method == 'POST':
+        search_string = request.POST.get('search').strip()
+        if search_string:
+            games = (Game.objects.filter(name__contains=search_string).distinct() |
+                     Game.objects.filter(genres__name__contains=search_string).distinct() |
+                     Game.objects.filter(description__contains=search_string).distinct())
+
+            publisher = (Publisher.objects.filter(name__contains=search_string).distinct() |
+                         Publisher.objects.filter(about__contains=search_string).distinct())
+
+            developer = (Developer.objects.filter(name__contains=search_string).distinct() |
+                         Developer.objects.filter(about__contains=search_string).distinct())
+
+            context = {'search': search_string,
+                       'games': games,
+                       'publisher': publisher,
+                       'developer': developer,}
+            return render(request, 'search.html', context)
+    return render(request, 'home.html')

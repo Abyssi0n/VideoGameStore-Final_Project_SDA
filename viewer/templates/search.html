@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Searching '{{ search }}'
+{% endblock %}
+
+{% block content %}
+    <h1>Searching for: '{{ search }}'</h1>
+    <hr>
+    <h2>Results in games:</h2>
+    <ul>
+        {% for game in games %}
+            <li><a href="{% url 'game' game.id %}">{{ game }}</a></li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h2>Results in publishers:</h2>
+    <ul>
+        {% for pub in publisher %}
+            <li><a href="{% url 'publisher' pub.id %}">{{ pub}}</a></li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h2>Results in developers:</h2>
+    <ul>
+        {% for dev in developer %}
+            <li><a href="{% url 'developer' dev.id %}">{{ dev }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -51,8 +51,10 @@ urlpatterns = [
 
   path('publisher/<int:pk>/', PublisherDetailView.as_view(), name="publisher"),
   path('publisher/<int:pk>/update', PublisherUpdateView.as_view(), name="pub_edit"),
+  path('publisher/create/', PublisherCreateView.as_view(), name="pub_create"),
   path('developer/<int:pk>/', DeveloperDetailView.as_view(), name="developer"),
   path('developer/<int:pk>/update', DeveloperUpdateView.as_view(), name="dev_edit"),
-  path('publisher/create/', PublisherCreateView.as_view(), name="pub_create"),
   path('developer/create/', DeveloperCreateView.as_view(), name="dev_create"),
+
+  path('search/', search, name='search'),
 ]

@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'home' %}">NotSteam</a>
+  <a class="navbar-brand" href="{% url 'home' %}" style="margin-top:-9px">NotSteam</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -39,6 +39,14 @@
             <a class="nav-item nav-link active" href="http://127.0.0.1:8000/admin/"> Admin Site</a>
         </div>
         {% endif %}
+        <div class="navbar-nav ml-auto">
+            <div class="search-div">
+                <form method="post" action="/search/">
+                    {% csrf_token %}
+                    <input type="text" id="search" name="search" style="margin-top:5px;margin-bottom:-5px;margin-left:10px" placeholder="Search...">
+                </form>
+            </div>
+        </div>
 
     </ul>
         <div class="navbar-nav ml-auto">
