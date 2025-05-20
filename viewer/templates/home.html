@@ -5,4 +5,12 @@
 {% endblock %}
 
 {% block content %}
+    <h1 style="text-align:center">Welcome to NotSteam!</h1>
+    <br>
+    <h1>Newest Additions:</h1>
+        {% for game in newgames %}
+            <li>
+                <a href="{% url 'game' game.id %}">{{ game }}</a>
+            </li>
+        {% endfor %}
 {% endblock %}

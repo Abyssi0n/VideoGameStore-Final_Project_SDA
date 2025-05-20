@@ -14,7 +14,6 @@ from viewer.models import Game
 class Profile(Model):
     user = OneToOneField(User, on_delete=CASCADE)
     nickname = TextField(max_length=32, default=user.name, blank=True)
-    # TODO: image
     biography = TextField(max_length=250, blank=True)
     date_of_birth = DateField()
     owned_games = ManyToManyField(Game, blank=True, related_name='own_game')

@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Admin Edit views&#10;Better Dev / Pub templates">
-      <change afterPath="$PROJECT_DIR$/templates/form_image.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/viewer/templates/confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/viewer/templates/image.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/viewer/templates/images.html" afterDir="false" />
+    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Images and their Views">
+      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoGameStore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoGameStore/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoGameStore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoGameStore/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,21 +56,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "viewer/feature/14-images",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Programs/PythonProjects/FinalProjectSDA/viewer/templates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;viewer/feature/15-home&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Programs/PythonProjects/FinalProjectSDA/viewer/templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Programs\PythonProjects\FinalProjectSDA\viewer\templates" />
       <recent name="E:\Programs\PythonProjects\FinalProjectSDA\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Programs\PythonProjects\FinalProjectSDA\templates" />
       <recent name="E:\Programs\PythonProjects\FinalProjectSDA" />
     </key>
   </component>
@@ -152,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747066985895</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Images and their Views">
+      <option name="closed" value="true" />
+      <created>1747669317099</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747669317099</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +189,7 @@
     <MESSAGE value="Buy page" />
     <MESSAGE value="Create Developer and Publisher model and template" />
     <MESSAGE value="Admin Edit views&#10;Better Dev / Pub templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin Edit views&#10;Better Dev / Pub templates" />
+    <MESSAGE value="Images and their Views" />
+    <option name="LAST_COMMIT_MESSAGE" value="Images and their Views" />
   </component>
 </project>

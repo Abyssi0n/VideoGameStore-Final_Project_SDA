@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.db.models import Q
+from django.db.models import Q, Count
 
 from accounts.models import Profile
 from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm, ImageModelForm
@@ -13,7 +13,10 @@ from viewer.models import Genre, Game, Publisher, Developer, Image
 
 
 def home(request):
-    return render(request, 'home.html')
+    newgames_ = Game.objects.order_by("-pk")[:5]
+    context = {"newgames": newgames_,
+               }
+    return render(request, 'home.html', context)
 
 
 class GenresListView(ListView):
