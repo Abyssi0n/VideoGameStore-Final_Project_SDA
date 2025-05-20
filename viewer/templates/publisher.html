@@ -7,7 +7,7 @@
 {% block content %}
     <h1 style="display:inline-block">{{ publisher }}</h1>
     {% if perms.viewer.edit_pub %}
-        <a href="{% url 'pub_edit' publisher.id %}" class="btn-primary" style="background-color:black">EDIT</a>
+        <a href="{% url 'pub_edit' publisher.id %}" class="btn-primary" style="background-color:black;padding:5px">EDIT</a>
     {% endif %}
     <p>{% if publisher.website %}
         <a href="{{publisher.website}}">{{ publisher.website }}</a>

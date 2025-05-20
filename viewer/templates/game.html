@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% comment %}TODO: Add back button! {% endcomment %}
-
 {% block title %}
 {{game.name}} - store page
 {% endblock %}
 
 {% block content %}
+    <a href="{% url 'games' }%" class="btn" style="color:white;background-color:black"> <- Back</a>
+    <br>
     <h1 style="display:inline-block">{{ game.name }}</h1>
     {% if perms.viewer.edit_game %}
-        <a href="{% url 'game_edit' game.id %}" class="btn-primary" style="background-color:black">EDIT</a>
+        <a href="{% url 'game_edit' game.id %}" class="btn-primary" style="background-color:black;padding:5px">EDIT</a>
     {% endif %}
     <hr style="border: 1px solid black">
     {% if image in game.image.all %}
@@ -21,7 +21,7 @@
             </span>
         {% endfor %}
         {% if perms.viewer.edit_img %}
-            <a href="{% url 'img_edit' image.id %}" class="btn-primary" style="background-color:black">EDIT</a>
+            <a href="{% url 'img_edit' image.id %}" class="btn-primary" style="background-color:black;padding:5px">EDIT</a>
         {% endif %}
     {% endif %}
     <br>

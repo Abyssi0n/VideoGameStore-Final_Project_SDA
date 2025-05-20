@@ -7,7 +7,7 @@
 {% block content %}
     <h1 style="display:inline-block">{{ developer }}</h1>
     {% if perms.viewer.edit_dev %}
-        <a href="{% url 'dev_edit' developer.id %}" class="btn-primary" style="background-color:black">EDIT</a>
+        <a href="{% url 'dev_edit' developer.id %}" class="btn-primary" style="background-color:black;padding:5px">EDIT</a>
     {% endif %}
     <p>{% if developer.website %}
         <a href="{{developer.website}}">{{ developer.website }}</a>
