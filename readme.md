@@ -1,4 +1,7 @@
 # Project Video Game E-shop
+This is a pretty rudimentary attempt at a project that's supposed to be a version of sort of an online video game e-shop
+with some account features, a database and whole lot of potential updates I simply didn't have time or knowledge to do yet.
+Created for the SDA Academy Python course.
 
 ## Features
 - [x] 1 List of games
