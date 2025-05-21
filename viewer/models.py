@@ -64,8 +64,6 @@ class Game(Model):
 class Image(Model):
     image = ImageField(upload_to='images/', default=None, null=False, blank=False)
     game = ForeignKey(Game, on_delete=SET_NULL, null=True, blank=True, related_name='image')
-    publisher = ForeignKey(Publisher, on_delete=SET_NULL, null=True, blank=True, related_name='image')
-    developer = ForeignKey(Developer, on_delete=SET_NULL, null=True, blank=True, related_name='image')
     description = TextField(null=True, blank=True)
 
     def __repr__(self):

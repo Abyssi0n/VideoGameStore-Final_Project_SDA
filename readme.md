@@ -1,38 +1,31 @@
-# Project Video Game E-shop / platform
+# Project Video Game E-shop
 
 ## Features
 - [x] 1 List of games
 - [x] 2 Individual game page
   - [ ] 1 additional content (DLC?)
   - [ ] 2 reviews
-- [ ] 3 Adding new games
+- [x] 3 Adding new games
 - [x] 4 Accounts
-  - [ ] 1 buying Games
-  - [ ] 2 Admins - uploading Games
+  - [x] 1 buying Games
+  - [x] 2 Admins - uploading Games
   - [x] 3 basic account features (profile pictures, bio, etc.)
-  - [ ] 4 list of uploaded games
+  - [x] 4 list of uploaded games
   - [ ] 5 account comments
-  - [ ] 6? playing
-  - [ ] 7? gameplay stats
-- [ ] 5 Searching / filtering games
-  - [ ] 1 genres
+- [x] 5 Searching / filtering games
+  - [x] 1 genres
   - [ ] 2 year of publishing
-  - [ ] 3 name
-  - [ ] 4 developer / publisher
-  - [ ] 5 description
+  - [x] 3 name
+  - [x] 4 developer / publisher
+  - [x] 5 description
 - [ ] 6 Sales
 - [ ] 7 Preorders
   - [ ] ? Early access?
-  - [ ] 8 Home Page
-    - [ ] 1 new releases
-    - [ ] 2 popular bestsellers
-    - [ ] 3 for you
-    - [ ] 4? most played
-- [ ] 9 Owned game library
-  - [ ] 1? playtime
-  - [ ] 2 achievements
-  - [ ] 3? status (installed/downloading/neither)
-  - [ ] 4 game news
+- [x] 8 Home Page
+  - [x] 1 new releases
+  - [ ] 2 popular bestsellers
+  - [ ] 3 for you
+- [x] 9 Owned game library
 - [ ] 10 Searching library
   - [ ] 1 genres
   - [ ] 2 year of publishing
@@ -40,65 +33,42 @@
   - [ ] 4 developer / publisher
   - [ ] 5 description
   - [ ] 6? status (installed/downloading/neither)
+- [x] 11 Publishers and Developers
+- [x] 12 Images
 
 
 ## Database
+![ER Diagram](./files/ERD.png)
 - [x] User (Django?)
 - [x] Genre
 - [x] Profile
   - [x] User (1:1 -> User)
   - [x] Name (String)
   - [x] Birth_date (Date)
-  - [ ] Picture (File)
   - [x] Description (String)
   - [x] Owned_games (n:n -> Game)
 - [x] Game
   - [x] Name (String)
   - [x] Genre (String)
-  - [ ] Box_art (1:1 -> Image)
+  - [x] Box_art (1:1 -> Image)
   - [x] Price (Float)
   - [x] Developer (n:n -> DeveloperGroup)
   - [x] Publisher (n:n -> PublisherGroup)
   - [x] Date_of_release (Date)
   - [x] Description (String)
   - [x] System_requirements (String)
-  - [ ] Review (1:n -> Review)
   - [x] Updated (Date)
-  - [ ] Patch_notes (1:n -> PatchNotes)
-  - [ ] Age_rating (n:n -> ESRB rating)
-- [ ] PatchNotes
-  - [ ] Game (n:1 -> Game)
-  - [ ] Update_time (Date)
-  - [ ] Notes_text (String)
-- [ ] Image
-  - [ ] Image_file (File)
-  - [ ] Profile_picture (1:1 -> Profile)
-  - [ ] Box (1:1 -> Game Box_art)
-  - [ ] ESRB (n:n -> Game Age_rating)
-  - [ ] Description (String)
-- [ ] Review
-  - [ ] Reviewer (1:n -> User)
-  - [ ] Game (n:1 -> Game)
-  - [ ] Rating (Boolean)
-  - [ ] Review_text (String)
-  - [ ] Created (Date)
-  - [ ] Updated (Date)
-- [ ] Comment
-  - [ ] From_user_comment (n:1 -> User)
-  - [ ] To_user_comment (1:n -> User)
-  - [ ] Comment_text (String)
-  - [ ] Post_time (Date)
-  - [ ] Edited (Boolean)
-  - [ ] Last_edit_time (Date)
+- [x] Image
+  - [x] Image_file (File)
+  - [x] Game (1:1 -> Game Box_art)
+  - [x] Description (String)
 - [x] DeveloperGroup
   - [x] Games (n:n -> Game)
   - [x] Name (String)
   - [x] Official Website (URL)
-  - [ ] Picture (File)
   - [x] About (String)
 - [x] PublisherGroup
   - [x] Games (n:n -> Game)
   - [x] Name (String)
   - [x] Official Website (URL)
-  - [ ] Picture (File)
   - [x] About (String)
