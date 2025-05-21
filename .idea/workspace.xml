@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Images and their Views">
+    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Small edits on buttons">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/genre.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/genre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/templates/publisher.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/templates/publisher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoGameStore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoGameStore/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="viewer/feature/15-home" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,9 +59,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python tests.Python tests for tests.GuiTestWithSelenium.executor": "Run",
+    "Python tests.Python tests for tests.GuiTestWithSelenium.test_home_page.executor": "Run",
+    "Python tests.Python tests in tests.py.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "tests",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "E:/Programs/PythonProjects/FinalProjectSDA/viewer/templates"
   }
@@ -151,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747669317099</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Small edits on buttons">
+      <option name="closed" value="true" />
+      <created>1747763096949</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747763096949</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +203,7 @@
     <MESSAGE value="Create Developer and Publisher model and template" />
     <MESSAGE value="Admin Edit views&#10;Better Dev / Pub templates" />
     <MESSAGE value="Images and their Views" />
-    <option name="LAST_COMMIT_MESSAGE" value="Images and their Views" />
+    <MESSAGE value="Small edits on buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small edits on buttons" />
   </component>
 </project>

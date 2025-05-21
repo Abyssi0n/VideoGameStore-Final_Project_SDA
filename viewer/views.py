@@ -8,7 +8,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.db.models import Q, Count
 
 from accounts.models import Profile
-from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm, ImageModelForm
+from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, PublisherModelForm, ImageModelForm
 from viewer.models import Genre, Game, Publisher, Developer, Image
 
 
@@ -155,7 +155,7 @@ class PublisherCreateView(PermissionRequiredMixin, CreateView):
 
 class DeveloperCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
-    form_class = DeveloperModelForm
+    form_class = PublisherModelForm
     success_url = "developer/{id}/"
     permission_required = 'viewer.add_dev'
 
@@ -178,7 +178,7 @@ class PublisherUpdateView(UpdateView):
 
 class DeveloperUpdateView(UpdateView):
     template_name = 'form.html'
-    form_class = DeveloperModelForm
+    form_class = PublisherModelForm
     model = Developer
     success_url = "/developer/{id}"
     permission_required = 'viewer.edit_dev'
