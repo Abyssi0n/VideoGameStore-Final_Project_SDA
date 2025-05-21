@@ -20,7 +20,7 @@ class PublisherModelForm(ModelForm):
         model = Publisher
         fields = '__all__'
 
-class DeveloperModelForm(ModelForm):
+class PublisherModelForm(ModelForm):
 
     class Meta:
         model = Developer

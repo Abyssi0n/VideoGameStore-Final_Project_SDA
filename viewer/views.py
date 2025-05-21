@@ -8,7 +8,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.db.models import Q, Count
 
 from accounts.models import Profile
-from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, DeveloperModelForm, ImageModelForm
+from viewer.forms import GameModelForm, GenreModelForm, PublisherModelForm, PublisherModelForm, ImageModelForm, \
+    PublisherModelForm as DeveloperModelForm
 from viewer.models import Genre, Game, Publisher, Developer, Image
 
 

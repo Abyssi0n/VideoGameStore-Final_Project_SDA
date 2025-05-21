@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import Model, CharField, ManyToManyField, FloatField, DateTimeField, TextField, DateField, \
-    URLField, SET_NULL, ForeignKey, ImageField
+    URLField, SET_NULL, ForeignKey, ImageField, DecimalField
 
 
 # Create your models here.
@@ -51,7 +51,7 @@ class Publisher(Model):
 class Game(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
     genres = ManyToManyField(Genre, blank=True, related_name='games')
-    price = FloatField(null=False, blank=False)
+    price = DecimalField(max_digits=6, decimal_places=2, null=False, blank=False)
     developers = ManyToManyField(Developer, blank=True, related_name='games')
     publishers = ManyToManyField(Publisher, blank=True, related_name='games')
     release_date = DateField()
