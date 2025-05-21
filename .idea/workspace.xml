@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Small improvements to games and genres&#10;Image adding restructure">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
+    <list default="true" id="2c691ec9-5b16-4e0b-b58e-ce81103240b7" name="Changes" comment="Final commit ?">
+      <change beforePath="$PROJECT_DIR$/VideoGameStore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoGameStore/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +100,7 @@
       <updated>1744045420348</updated>
       <workItem from="1747831039000" duration="1362000" />
       <workItem from="1747833462031" duration="4177000" />
-      <workItem from="1747838687646" duration="334000" />
+      <workItem from="1747838687646" duration="652000" />
     </task>
     <task id="LOCAL-00001" summary="First iteration of readme file">
       <option name="closed" value="true" />
@@ -184,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747837520523</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Final commit ?">
+      <option name="closed" value="true" />
+      <created>1747839275825</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747839275825</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +230,7 @@
     <MESSAGE value="Images and their Views" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="Small improvements to games and genres&#10;Image adding restructure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small improvements to games and genres&#10;Image adding restructure" />
+    <MESSAGE value="Final commit ?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit ?" />
   </component>
 </project>
