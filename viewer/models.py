@@ -22,7 +22,8 @@ class Developer(Model):
     website = URLField(null=False, blank=True)
     about = TextField(null=True, blank=True)
 
-
+    class Meta:
+        ordering = ['name']
 
     def __repr__(self):
         return f"Developer(name={self.name})"
@@ -36,12 +37,16 @@ class Publisher(Model):
     website = URLField(null=False, blank=True)
     about = TextField(null=True, blank=True)
 
+    class Meta:
+        ordering = ['name']
 
     def __repr__(self):
         return f"Publisher(name={self.name})"
 
     def __str__(self):
         return self.name
+
+
 
 class Game(Model):
     name = CharField(max_length=100, null=False, blank=False, unique=True)
@@ -54,11 +59,16 @@ class Game(Model):
     system_reqs = TextField(null=False, blank=False)
     updated = DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['name']
+
     def __repr__(self):
         return f"Game(name={self.name})"
 
     def __str__(self):
         return self.name
+
+
 
 
 class Image(Model):
