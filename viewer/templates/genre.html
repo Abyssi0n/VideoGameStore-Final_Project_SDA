@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+    <a href="{% url 'genres' %}" class="btn" style="color:white;background-color:black"> <- Back</a>
+    <br>
     <h1 style="display:inline-block">{{ genre }}</h1>
     {% if perms.viewer.edit_genre %}
         <a href="{% url 'genre_edit' genre.id %}" class="btn-primary" style="background-color:black;padding:5px">EDIT</a>

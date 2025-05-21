@@ -64,7 +64,7 @@ def game(request, pk):
 class GameCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = GameModelForm
-    success_url = "games/{id}"
+    success_url = "/game/{id}"
     permission_required = 'viewer.add_game'
 
     def form_invalid(self, form):
@@ -145,7 +145,7 @@ class DeveloperDetailView(DetailView):
 class PublisherCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = PublisherModelForm
-    success_url = "publisher/{id}/"
+    success_url = "/publisher/{id}/"
     permission_required = 'viewer.add_pub'
 
     def form_invalid(self, form):
@@ -156,7 +156,7 @@ class PublisherCreateView(PermissionRequiredMixin, CreateView):
 class DeveloperCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = DeveloperModelForm
-    success_url = "developer/{id}/"
+    success_url = "/developer/{id}/"
     permission_required = 'viewer.add_dev'
 
     def form_invalid(self, form):

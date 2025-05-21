@@ -30,4 +30,4 @@ class DeveloperModelForm(ModelForm):
 class ImageModelForm(ModelForm):
     class Meta:
         model = Image
-        fields = ['image', 'description']
+        fields = '__all__'

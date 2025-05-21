@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <a href="{% url 'games' }%" class="btn" style="color:white;background-color:black"> <- Back</a>
+    <a href="{% url 'games' %}" class="btn" style="color:white;background-color:black"> <- Back</a>
     <br>
     <h1 style="display:inline-block">{{ game.name }}</h1>
     {% if perms.viewer.edit_game %}
@@ -23,7 +23,12 @@
         {% if perms.viewer.edit_img %}
             <a href="{% url 'img_edit' image.id %}" class="btn-primary" style="background-color:black;padding:5px">EDIT</a>
         {% endif %}
+    {% else %}
+        {% if perms.viewer.add_img %}
+            <a href="{% url 'img_add' %}" class="btn-primary" style="background-color:black;padding:5px">ADD IMAGE</a>
+        {% endif %}
     {% endif %}
+
     <br>
 
 
